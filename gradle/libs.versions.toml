@@ -15,6 +15,7 @@ compose-compiler = "1.5.6"
 compose-plugin = "1.5.11"
 junit = "4.13.2"
 kotlin = "1.9.21"
+precompose = "1.5.10" # https://tlaster.github.io/PreCompose/setup.html
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -32,6 +33,13 @@ compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = 
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+
+precompose = {group = "moe.tlaster", name = "precompose", version.ref = "precompose" }
+# precompose-koin = {group = "moe.tlaster", name = "precompose-koin", version.ref = "precompose" }
+# precompose-viewmodel = {group = "moe.tlaster", name = "precompose-viewmodel", version.ref = "precompose" }
+
+[bundles]
+precompose = ["precompose"]
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

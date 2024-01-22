@@ -19,3 +19,15 @@ Reference: https://tlaster.github.io/PreCompose/
 
 > Compose Multiplatform Navigation && ViewModel, inspired by Jetpack Lifecycle, ViewModel, LiveData and Navigation,
 PreCompose provides similar (or even the same) components for you but in Kotlin, and it’s Kotlin Multiplatform project.
+
+## Adding a new Kotlin Multiplatform Shared Module
+
+Create a new module by clicking:
+
+1. Right click on the project -> New -> Module
+2. Select `Kotlin Multiplatform Shared Module`
+3. Enter the module name
+4. In the `settings.gradle.kts` file, the new module is included by the following line:
+   `include(":<module-name>")`
+5. Add the new module as a dependency to the `build.gradle.kts` file of the `composeApp` module:
+   `implementation(project(":<module-name>"))`

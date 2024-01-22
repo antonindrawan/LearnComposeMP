@@ -1,3 +1,5 @@
+package org.anton.learncmp.base
+
 import platform.UIKit.UIDevice
 
 class IOSPlatform: Platform {

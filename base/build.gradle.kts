@@ -35,7 +35,7 @@ kotlin {
         }
         val desktopMain by getting
         desktopMain.dependencies {
-            implementation(compose.desktop.currentOs)
+            api(compose.desktop.currentOs)
         }
     }
 }

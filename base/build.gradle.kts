@@ -1,17 +1,14 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsCompose)
+
+    // alias(libs.plugins.androidLibrary) is replaced by a custom plugin
+    id("org.anton.learncmp.android.library")
 }
 
 kotlin {
-    androidTarget {
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "1.8"
-            }
-        }
-    }
+    // Register the Android target. Required before using any of the android {} configuration blocks
+    androidTarget()
 
     jvm("desktop")
 
@@ -43,8 +40,6 @@ kotlin {
 
 android {
     namespace = "org.anton.learncmp.base"
-    compileSdk = 34
-    defaultConfig {
-        minSdk = 24
-    }
+    // minSdk, compileSdk, targetSdk are set in the AndroidLibraryConventionPlugin
+    // which configures the parameters in build-logic/convention/src/main/kotlin/.../KotlinAndroid.kt
 }

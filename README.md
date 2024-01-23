@@ -31,3 +31,11 @@ Create a new module by clicking:
    `include(":<module-name>")`
 5. Add the new module as a dependency to the `build.gradle.kts` file of the `composeApp` module:
    `implementation(project(":<module-name>"))`
+
+## Sharing build logic between modules
+
+1. Create `buildSrc`
+
+References:
+* https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:use_standard_conventions
+* https://docs.gradle.org/current/samples/sample_convention_plugins.html

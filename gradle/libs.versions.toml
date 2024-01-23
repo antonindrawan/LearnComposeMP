@@ -1,5 +1,7 @@
 [versions]
-agp = "8.1.4"
+# AGP and tools should be updated together
+agp = "8.2.0"
+androidTools = "31.2.0"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
@@ -14,6 +16,8 @@ compose = "1.5.4"
 compose-compiler = "1.5.6"
 compose-plugin = "1.5.11"
 junit = "4.13.2"
+koin = "3.5.3"
+koin-compose = "1.1.2"
 kotlin = "1.9.21"
 precompose = "1.5.10" # https://tlaster.github.io/PreCompose/setup.html
 
@@ -34,9 +38,19 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
 
+#
+# koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+# koin-compose = { group = "io.insert-koin", name = "koin-compose", version.ref = "koin-compose" }
+
 precompose = {group = "moe.tlaster", name = "precompose", version.ref = "precompose" }
 # precompose-koin = {group = "moe.tlaster", name = "precompose-koin", version.ref = "precompose" }
 # precompose-viewmodel = {group = "moe.tlaster", name = "precompose-viewmodel", version.ref = "precompose" }
+
+
+# Dependencies of the included build-logic
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 
 [bundles]
 precompose = ["precompose"]

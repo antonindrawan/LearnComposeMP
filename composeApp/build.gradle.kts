@@ -3,18 +3,15 @@ import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
+
+    // alias(libs.plugins.androidApplication) is replaced by a custom plugin
+    id("org.anton.learncmp.android.application")
 }
 
 kotlin {
-    androidTarget {
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "1.8"
-            }
-        }
-    }
+    // Register the Android target. Required before using any of the android {} configuration blocks
+    androidTarget()
 
     jvm("desktop")
 
@@ -50,7 +47,6 @@ kotlin {
 
 android {
     namespace = "org.anton.learncmp"
-    compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     sourceSets["main"].res.srcDirs("src/androidMain/res")
@@ -58,8 +54,6 @@ android {
 
     defaultConfig {
         applicationId = "org.anton.learncmp"
-        minSdk = libs.versions.android.minSdk.get().toInt()
-        targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
     }
@@ -73,10 +67,7 @@ android {
             isMinifyEnabled = false
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
+
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
     }

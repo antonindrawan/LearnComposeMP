@@ -34,7 +34,11 @@ Create a new module by clicking:
 
 ## Sharing build logic between modules
 
-1. Create `buildSrc`
+When creating a new module, the generated gradle.build.kts file contains duplicate logic.
+To avoid this, we can share build logic to avoid duplicated build script setup.
+
+See [`build-logic/README.md`](build-logic/README.md).
+
 
 References:
 * https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:use_standard_conventions

@@ -1,4 +1,5 @@
 import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import components.ButtonExamples
@@ -6,7 +7,9 @@ import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.Navigator
 import moe.tlaster.precompose.navigation.rememberNavigator
 import moe.tlaster.precompose.navigation.transition.NavTransition
+import org.jetbrains.compose.resources.ExperimentalResourceApi
 
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun Nav() {
     val navigator: Navigator = rememberNavigator()
@@ -29,6 +32,7 @@ fun Nav() {
                     navigator.navigate("/show-button-example")
                 },
             ) {
+                //Icon(painter = org.jetbrains.compose.resources.painterResource("drawable/some_drawable.xml"))
                 Text("Show Button Examples")
             }
         }

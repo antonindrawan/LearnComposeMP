@@ -9,6 +9,8 @@ plugins {
     // alias(libs.plugins.androidApplication) is replaced by a custom plugin
     id("org.anton.learncmp.android.application")
     id("org.anton.learncmp.spotless")
+
+    alias(moko.plugins.multiplatformResources)
 }
 
 kotlin {
@@ -42,6 +44,7 @@ kotlin {
             implementation(compose.components.resources)
 
             implementation(libs.bundles.precompose)
+            //implementation(moko.resourcesCompose)
             implementation(project(":base"))
         }
     }

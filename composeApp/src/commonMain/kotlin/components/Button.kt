@@ -21,22 +21,23 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun ButtonExamples() {
     Column(
-        modifier = Modifier
-            .padding(48.dp)
-            .fillMaxSize(),
+        modifier =
+            Modifier
+                .padding(48.dp)
+                .fillMaxSize(),
         verticalArrangement = Arrangement.spacedBy(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
+    ) {
         Text("Filled button:")
-            FilledButtonExample(onClick = {})
-            Text("Filled tonal button:")
-            FilledTonalButtonExample(onClick = {})
-            Text("Elevated button:")
-            ElevatedButtonExample(onClick = {})
-            Text("Outlined button:")
-            OutlinedButtonExample(onClick = {})
-            Text("Text button")
-            TextButtonExample(onClick = {})
+        FilledButtonExample(onClick = {})
+        Text("Filled tonal button:")
+        FilledTonalButtonExample(onClick = {})
+        Text("Elevated button:")
+        ElevatedButtonExample(onClick = {})
+        Text("Outlined button:")
+        OutlinedButtonExample(onClick = {})
+        Text("Text button")
+        TextButtonExample(onClick = {})
     }
 }
 
@@ -80,7 +81,7 @@ fun OutlinedButtonExample(onClick: () -> Unit) {
 @Composable
 fun TextButtonExample(onClick: () -> Unit) {
     TextButton(
-        onClick = { onClick() }
+        onClick = { onClick() },
     ) {
         Text("Text Button")
     }

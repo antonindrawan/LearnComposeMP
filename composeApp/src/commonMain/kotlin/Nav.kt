@@ -17,11 +17,12 @@ fun Nav() {
         // Navigation transition for the scenes in this NavHost, this is optional
         navTransition = NavTransition(),
         // The start destination
-        initialRoute = "/home"
+        initialRoute = "/home",
     ) {
         // Define a scene to the navigation graph
-        scene(route = "/home",
-            navTransition = NavTransition()
+        scene(
+            route = "/home",
+            navTransition = NavTransition(),
         ) {
             Button(
                 onClick = {
@@ -33,12 +34,12 @@ fun Nav() {
         }
 
         scene(
-            route = "/show-button-example"
+            route = "/show-button-example",
         ) {
             Button(
                 onClick = {
                     navigator.goBack()
-                }
+                },
             ) {
                 Text("Back")
             }

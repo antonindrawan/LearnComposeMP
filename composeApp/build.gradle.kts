@@ -4,9 +4,14 @@ import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.spotless)
 
     // alias(libs.plugins.androidApplication) is replaced by a custom plugin
     id("org.anton.learncmp.android.application")
+}
+
+apply {
+    from( "${project.rootDir}/spotless/spotless.gradle")
 }
 
 kotlin {

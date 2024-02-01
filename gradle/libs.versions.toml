@@ -19,7 +19,9 @@ junit = "4.13.2"
 koin = "3.5.3"
 koin-compose = "1.1.2"
 kotlin = "1.9.21"
+ktlint = "1.1.1"
 precompose = "1.5.10" # https://tlaster.github.io/PreCompose/setup.html
+spotless = "6.25.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -60,3 +62,4 @@ androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }

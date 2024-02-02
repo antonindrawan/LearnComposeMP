@@ -9,7 +9,7 @@ class SpotlessConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
-                apply("com.diffplug.spotless")
+                apply(SpotlessPlugin::class.java)
             }
 
             val ktlinVersion = libs.findVersion("ktlint").get().toString()

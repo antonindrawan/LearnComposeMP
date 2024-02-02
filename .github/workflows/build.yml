@@ -1,0 +1,24 @@
+name: Build App
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v3
+
+      - name: Run spotlessCheck
+        run: ./gradlew spotlessCheck
+
+      - name: Execute Gradle build
+        run: ./gradlew build

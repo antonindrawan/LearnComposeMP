@@ -49,6 +49,8 @@ precompose = {group = "moe.tlaster", name = "precompose", version.ref = "precomp
 # precompose-viewmodel = {group = "moe.tlaster", name = "precompose-viewmodel", version.ref = "precompose" }
 
 
+spotless-gradlePlugin = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
+
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }

@@ -40,6 +40,7 @@ tasks.withType<KotlinCompile>().configureEach {
 dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.spotless.gradlePlugin)
 }
 
 gradlePlugin {
@@ -51,6 +52,10 @@ gradlePlugin {
         register("androidLibrary") {
             id = "org.anton.learncmp.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
+        }
+        register("spotless") {
+            id = "org.anton.learncmp.spotless"
+            implementationClass = "SpotlessConventionPlugin"
         }
     }
 }

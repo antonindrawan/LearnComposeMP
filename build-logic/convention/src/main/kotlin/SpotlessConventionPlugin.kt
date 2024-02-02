@@ -1,4 +1,3 @@
-
 import com.diffplug.gradle.spotless.SpotlessExtension
 import com.diffplug.gradle.spotless.SpotlessPlugin
 import org.anton.learncmp.libs
@@ -10,7 +9,7 @@ class SpotlessConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
-                apply(SpotlessPlugin::class.java)
+                apply("com.diffplug.spotless")
             }
 
             val ktlinVersion = libs.findVersion("ktlint").get().toString()
@@ -25,6 +24,12 @@ class SpotlessConventionPlugin : Plugin<Project> {
                     target("**/*.kts")
                     targetExclude("**/build/**/*.kts")
                     ktlint(ktlinVersion).setEditorConfigPath(rootProject.file(".editorconfig"))
+                }
+            }
+
+            tasks.configureEach {
+                if (name == "preBuild") {
+                    dependsOn("spotlessApply")
                 }
             }
         }

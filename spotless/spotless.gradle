@@ -1,6 +1,0 @@
-spotless {
-    kotlin {
-        target("**/*.kt")
-        ktlint(libs.versions.ktlint.get()).setEditorConfigPath("${project.rootDir}/spotless/.editorconfig")
-    }
-}

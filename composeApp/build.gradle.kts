@@ -8,10 +8,7 @@ plugins {
 
     // alias(libs.plugins.androidApplication) is replaced by a custom plugin
     id("org.anton.learncmp.android.application")
-}
-
-apply {
-    from( "${project.rootDir}/spotless/spotless.gradle")
+    id("org.anton.learncmp.spotless")
 }
 
 kotlin {

@@ -18,13 +18,13 @@ class SpotlessConventionPlugin : Plugin<Project> {
                 kotlin {
                     target("**/*.kt")
                     targetExclude("**/build/**/*.kt")
-                    ktlint(ktlinVersion).setEditorConfigPath(rootProject.file("spotless/.editorconfig"))
+                    ktlint(ktlinVersion).setEditorConfigPath(rootProject.file(".editorconfig"))
                     // TODO: licenseHeaderFile(rootProject.file("spotless/copyright.kt"))
                 }
                 kotlinGradle {
                     target("**/*.kts")
                     targetExclude("**/build/**/*.kts")
-                    ktlint(ktlinVersion).setEditorConfigPath(rootProject.file("spotless/.editorconfig"))
+                    ktlint(ktlinVersion).setEditorConfigPath(rootProject.file(".editorconfig"))
                 }
             }
         }

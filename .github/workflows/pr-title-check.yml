@@ -29,7 +29,7 @@ jobs:
                 fix
                 refactor
                 test
-          requireScope: ${{ github.actor != 'dependabot[bot]' && true || false }}
-          scopes: (TEST-\d+|deps)
+          requireScope: true
+          scopes: ${{ github.event.pull_request.user.login == 'dependabot[bot]' && 'deps' || 'TEST-\d+' }}
           # This example ensures the subject doesn't start with an uppercase character.
           subjectPattern: ^(?![A-Z]).+$

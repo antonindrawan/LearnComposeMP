@@ -17,4 +17,4 @@ updates:
       schedule:
           interval: "daily"
       commit-message:
-          prefix: "ci(deps): "
+          prefix: "ci(deps-actions): "

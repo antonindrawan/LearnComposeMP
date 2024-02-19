@@ -12,6 +12,18 @@ updates:
           # time: "05:00" #UTC
       commit-message:
           prefix: "ci(deps): "
+      groups:
+          agp:
+              patterns:
+                  - "com.android.tools.*"
+                  - "com.android.*"
+          androidx:
+              patterns:
+                  - "androidx.*"
+                  - "com.google.android.material.*"
+          jetbrains:
+              patterns:
+                  - "org.jetbrains.*"
     - package-ecosystem: "github-actions"
       directory: "/"
       schedule:

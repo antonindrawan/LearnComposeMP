@@ -20,7 +20,7 @@ updates:
           androidx:
               patterns:
                   - "androidx.*"
-                  - "com.google.android.material.*"
+                  - "com.google.android.material"
           jetbrains:
               patterns:
                   - "org.jetbrains.*"

@@ -1,7 +1,6 @@
 [versions]
 # AGP and tools should be updated together
 agp = "8.2.0"
-androidTools = "31.2.0"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
@@ -44,7 +43,7 @@ compose-material = { module = "androidx.compose.material:material", version.ref 
 # koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 # koin-compose = { group = "io.insert-koin", name = "koin-compose", version.ref = "koin-compose" }
 
-precompose = {group = "moe.tlaster", name = "precompose", version.ref = "precompose" }
+precompose = { group = "moe.tlaster", name = "precompose", version.ref = "precompose" }
 # precompose-koin = {group = "moe.tlaster", name = "precompose-koin", version.ref = "precompose" }
 # precompose-viewmodel = {group = "moe.tlaster", name = "precompose-viewmodel", version.ref = "precompose" }
 
@@ -53,7 +52,6 @@ spotless-gradlePlugin = { module = "com.diffplug.spotless:spotless-plugin-gradle
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
-android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 
 [bundles]

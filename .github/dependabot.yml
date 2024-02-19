@@ -15,7 +15,6 @@ updates:
       groups:
           agp:
               patterns:
-                  - "com.android.tools.*"
                   - "com.android.*"
           androidx:
               patterns:

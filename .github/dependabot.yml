@@ -18,3 +18,7 @@ updates:
           interval: "daily"
       commit-message:
           prefix: "ci(deps-actions): "
+      groups:
+          gh-actions:
+              patterns:
+                  - "*"

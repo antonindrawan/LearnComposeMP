@@ -31,7 +31,7 @@ jobs:
                 refactor
                 style
                 test
-          requireScope: true
+          requireScope: false
           scopes: (deps.*|TEST-\d+)
           # This example ensures the subject doesn't start with an uppercase character.
           subjectPattern: ^(?![A-Z]).+$

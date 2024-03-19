@@ -19,7 +19,7 @@ koin = "3.5.3"
 koin-compose = "1.1.2"
 kotlin = "1.9.22"
 ktlint = "1.1.1"
-precompose = "1.5.10" # https://tlaster.github.io/PreCompose/setup.html
+precompose = "1.5.11" # https://tlaster.github.io/PreCompose/setup.html
 spotless = "6.25.0"
 
 [libraries]

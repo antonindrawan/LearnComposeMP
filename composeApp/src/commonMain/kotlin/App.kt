@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -16,12 +18,14 @@ import moe.tlaster.precompose.PreComposeApp
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
+import ui.theme.MyTheme
+
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
     PreComposeApp {
-        MaterialTheme {
+        MyTheme {
             var showContent by remember { mutableStateOf(false) }
             val greeting = remember { Greeting().greet() }
             Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {

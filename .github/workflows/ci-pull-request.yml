@@ -2,11 +2,14 @@ name: CI on pull requests
 
 on:
   pull_request:
-    branches:
-      - main
+    branches: [main]
     paths-ignore:
       - 'README.md'
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:

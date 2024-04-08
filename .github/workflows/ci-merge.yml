@@ -2,8 +2,7 @@ name: CI on main
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build:

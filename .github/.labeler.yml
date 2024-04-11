@@ -1,0 +1,14 @@
+# Used by fuxingloh/multi-labeler@v4
+
+version: v1
+
+labels:
+  - label: 'feature'
+    matcher:
+      title: '^feat(\(:).+'
+  - label: 'fix'
+    matcher:
+      title: '^fix(\(:).+'
+  - label: 'ci'
+    matcher:
+      title: '^ci(\(:).+'

@@ -30,7 +30,7 @@ jobs:
         run: ./gradlew build
 
       - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@1.67.0
+        uses: anothrNick/github-tag-action@1.69.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # if you don't want to set write permissions use a PAT token
           WITH_V: false

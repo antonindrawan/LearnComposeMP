@@ -1,13 +1,16 @@
 import androidx.compose.material3.Button
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import components.ButtonExamples
+import dev.icerock.moko.resources.compose.stringResource
 import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.Navigator
 import moe.tlaster.precompose.navigation.rememberNavigator
 import moe.tlaster.precompose.navigation.transition.NavTransition
+import org.anton.learncmp.resources.MR
 import org.jetbrains.compose.resources.ExperimentalResourceApi
+
+// import org.jetbrains.compose.resources.painterResource
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
@@ -32,8 +35,11 @@ fun Nav() {
                     navigator.navigate("/show-button-example")
                 },
             ) {
-                //Icon(painter = org.jetbrains.compose.resources.painterResource("drawable/some_drawable.xml"))
-                Text("Show Button Examples")
+//                Image(
+//                    painter = painterResource(MR.images.sailboat),
+//                    contentDescription = null,
+//                )
+                Text(stringResource(MR.strings.show_button_example))
             }
         }
 

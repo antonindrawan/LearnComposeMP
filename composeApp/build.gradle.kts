@@ -5,12 +5,11 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.spotless)
+    alias(libs.plugins.mokoMultiplatformResources)
 
     // alias(libs.plugins.androidApplication) is replaced by a custom plugin
     id("org.anton.learncmp.android.application")
     id("org.anton.learncmp.spotless")
-
-    alias(moko.plugins.multiplatformResources)
 }
 
 kotlin {
@@ -31,6 +30,12 @@ kotlin {
     }
 
     sourceSets {
+        getByName("androidMain").dependsOn(commonMain.get())
+        getByName("desktopMain").dependsOn(commonMain.get())
+        getByName("iosX64Main").dependsOn(commonMain.get())
+        getByName("iosArm64Main").dependsOn(commonMain.get())
+        getByName("iosSimulatorArm64Main").dependsOn(commonMain.get())
+
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
@@ -44,8 +49,11 @@ kotlin {
             implementation(compose.components.resources)
 
             implementation(libs.bundles.precompose)
-            //implementation(moko.resourcesCompose)
+            implementation(libs.bundles.mokoResources)
             implementation(project(":base"))
+        }
+        iosMain.dependencies {
+            // Intentionally left blank
         }
     }
 }
@@ -88,4 +96,9 @@ compose.desktop {
             packageVersion = "1.0.0"
         }
     }
+}
+
+
+multiplatformResources {
+    multiplatformResourcesPackage = "org.anton.learncmp.resources"
 }

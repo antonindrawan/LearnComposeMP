@@ -2,8 +2,9 @@ import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
-    alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.kotlinMultiplatform)
+    alias(libs.plugins.mokoMultiplatformResources)
     alias(libs.plugins.spotless)
 
     // alias(libs.plugins.androidApplication) is replaced by a custom plugin
@@ -85,4 +86,8 @@ compose.desktop {
             packageVersion = "1.0.0"
         }
     }
+}
+
+multiplatformResources {
+    resourcesPackage = "org.anton.learncmp.resources" // required
 }

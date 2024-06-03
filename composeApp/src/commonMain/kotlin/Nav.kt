@@ -2,10 +2,12 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import components.ButtonExamples
+import dev.icerock.moko.resources.compose.stringResource
 import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.Navigator
 import moe.tlaster.precompose.navigation.rememberNavigator
 import moe.tlaster.precompose.navigation.transition.NavTransition
+import org.anton.learncmp.resources.MR
 
 @Composable
 fun Nav() {
@@ -29,7 +31,7 @@ fun Nav() {
                     navigator.navigate("/show-button-example")
                 },
             ) {
-                Text("Show Button Examples")
+                Text(stringResource(resource = MR.strings.show_button_example))
             }
         }
 

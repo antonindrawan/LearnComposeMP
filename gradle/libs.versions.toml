@@ -62,6 +62,7 @@ android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", ver
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 
 [bundles]
+moko-resources = ["moko-resources", "moko-resources-compose"]
 precompose = ["precompose"]
 
 [plugins]

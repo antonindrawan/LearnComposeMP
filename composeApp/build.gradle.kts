@@ -42,8 +42,13 @@ kotlin {
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
 
+            api(libs.bundles.moko.resources)
+
             implementation(libs.bundles.precompose)
             implementation(project(":base"))
+        }
+        commonTest.dependencies {
+            implementation(libs.moko.resources.test)
         }
     }
 }
@@ -89,5 +94,5 @@ compose.desktop {
 }
 
 multiplatformResources {
-    resourcesPackage = "org.anton.learncmp.resources" // required
+    resourcesPackage.set("org.anton.learncmp.resources") // required
 }

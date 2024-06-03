@@ -19,6 +19,7 @@ koin = "3.5.3"
 koin-compose = "1.1.2"
 kotlin = "1.9.23"
 ktlint = "1.1.1"
+moko-version = "0.24.0-beta-5" # can't use 0.23.0, see https://github.com/icerockdev/moko-resources/issues/702
 precompose = "1.5.11" # https://tlaster.github.io/PreCompose/setup.html
 spotless = "6.25.0"
 
@@ -43,6 +44,12 @@ compose-material = { module = "androidx.compose.material:material", version.ref 
 # koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
 # koin-compose = { group = "io.insert-koin", name = "koin-compose", version.ref = "koin-compose" }
 
+# moko-resources
+moko-resources = { module = "dev.icerock.moko:resources", version.ref = "moko-version" }
+moko-resources-compose = { module = "dev.icerock.moko:resources-compose", version.ref = "moko-version" }
+moko-resources-test = { module = "dev.icerock.moko:resources-test", version.ref = "moko-version" }
+moko-resources-generator = { module = "dev.icerock.moko:resources-generator", version.ref = "moko-version" }
+
 precompose = { group = "moe.tlaster", name = "precompose", version.ref = "precompose" }
 # precompose-koin = {group = "moe.tlaster", name = "precompose-koin", version.ref = "precompose" }
 # precompose-viewmodel = {group = "moe.tlaster", name = "precompose-viewmodel", version.ref = "precompose" }
@@ -55,6 +62,7 @@ android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", ver
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 
 [bundles]
+moko-resources = ["moko-resources", "moko-resources-compose"]
 precompose = ["precompose"]
 
 [plugins]
@@ -62,4 +70,5 @@ androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+mokoMultiplatformResources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko-version" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }

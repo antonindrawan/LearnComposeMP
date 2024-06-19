@@ -12,12 +12,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import learncomposemp.composeapp.generated.resources.Res
+import learncomposemp.composeapp.generated.resources.compose_multiplatform
 import moe.tlaster.precompose.PreComposeApp
-import org.jetbrains.compose.resources.DrawableResource
-import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
-@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
     PreComposeApp {
@@ -30,7 +29,7 @@ fun App() {
                 }
                 AnimatedVisibility(showContent) {
                     Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                        Image(painterResource(DrawableResource("compose-multiplatform.xml")), null)
+                        Image(painterResource(Res.drawable.compose_multiplatform), null)
                         Text("Compose: $greeting")
                     }
                 }

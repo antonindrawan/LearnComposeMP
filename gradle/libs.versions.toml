@@ -12,12 +12,11 @@ androidx-espresso-core = "3.5.1"
 androidx-material = "1.12.0"
 androidx-test-junit = "1.1.5"
 compose = "1.6.8"
-compose-compiler = "1.5.6"
 compose-plugin = "1.6.11"
 junit = "4.13.2"
 koin = "3.5.3"
 koin-compose = "1.1.2"
-kotlin = "1.9.23"
+kotlin = "2.0.0"
 ktlint = "1.1.1"
 moko-version = "0.24.0-beta-5" # can't use 0.23.0, see https://github.com/icerockdev/moko-resources/issues/702
 precompose = "1.5.11" # https://tlaster.github.io/PreCompose/setup.html
@@ -68,6 +67,7 @@ precompose = ["precompose"]
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 mokoMultiplatformResources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moko-version" }
